@@ -1,8 +1,5 @@
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-
-using namespace std;
+#import <Foundation/Foundation.h>
+#import <stdlib.h>
 
 int roll ();
 
@@ -14,7 +11,7 @@ int main (int argc, char *argv[]) {
 	for (int i = 0; i < (sizeof(amount)/sizeof(*amount)); i++) {
 		amount [i] = 0;
 	}
-	cout << "Simulating..." << endl;
+	printf("Simulating...\n");
 	for (int i = 0; i < simulationTimes; i++) {
 		int dice1 = roll();
 		int dice2 = roll();
@@ -23,14 +20,9 @@ int main (int argc, char *argv[]) {
 	for (int i = 0; i < simulationTimes; i++) {
 		amount[result[i]-2]++;
 	}
-	/* Test */
-	/*for (int i = 0; i < simulationTimes; i++) {
-		cout << result[i] << endl;
-	}*/
 	for (int i = 0; i < (sizeof(amount)/sizeof(*amount)); i++) {
-		cout << i+2 << "\t" << amount[i] << "\t" << (double)(amount[i])/(double)(simulationTimes)*100 << "%" << endl;
+		printf("%d\t%d\t%.3f%%\n", i+2, amount[i], (double)(amount[i])/(double)(simulationTimes)*100);
 	}
-	//cout << sizeof(result)/sizeof(*result) << " " << sizeof(amount)/sizeof(*amount) << endl;
 	return 0;
 }
 
