@@ -1,4 +1,4 @@
-#include "complex.h"
+#import "complex.h"
 
 int main(int argc, char* argv[]) {
 	Complex cmplx1 = Complex(3,2);

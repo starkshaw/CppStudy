@@ -1,6 +1,6 @@
-#include "complex.h"
-#include <sstream>
-#include <string>
+#import "complex.h"
+#import <sstream>
+#import <string>
 
 Complex Complex::Add(Complex &complexNumber) {
 	Complex answer;
