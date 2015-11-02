@@ -8,11 +8,19 @@
 @implementation die
 
 - (void)roll {
-	self.point = rand() % 6 + 1;
+	self.point = rand() % self.sides + 1;
 }
 
-- (int)getNumsides {
-	return 6;
+- (id) init {
+	self = [super init];
+	self.sides = 6;
+	return self;
+}
+
+- (id) initWithSidesOverFour: (int)sides {
+	self = [super init];
+	self.sides = sides;
+	return self;
 }
 
 @end

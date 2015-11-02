@@ -3,8 +3,10 @@
 @interface die : NSObject
 
 - (void)roll;
-- (int)getNumsides;
+- (id)init;
+- (id)initWithSidesOverFour: (int)sides;
 
 @property (nonatomic) int point;
+@property (nonatomic) int sides;
 
 @end

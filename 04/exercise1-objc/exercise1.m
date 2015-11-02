@@ -5,12 +5,13 @@ int main(int argc, char* argv[]) {
 	srand(time(NULL));
 	int simulationTimes = 100000;
 	int result[simulationTimes];
-	int amount[11];
+	int sidesOfDie = 6;
+	int amount[2*sidesOfDie-1];
 	for (int i = 0; i < (sizeof(amount)/sizeof(*amount)); i++) {
 		amount [i] = 0;
 	}
-	die *monte = [die new];
-	die *carlo = [die new];
+	die *monte = [[die alloc]initWithSidesOverFour: sidesOfDie];
+	die *carlo = [[die alloc]initWithSidesOverFour: sidesOfDie];
 	printf("Simulating...\n");
 	for (int i = 0; i < simulationTimes; i++) {
 		[monte roll];
