@@ -19,7 +19,12 @@
 
 - (id) initWithSidesOverFour: (int)sides {
 	self = [super init];
-	self.sides = sides;
+	if(sides>=4) {
+		self.sides = sides;
+	} else {
+		printf("WARNING: The value of side should be greater or equal to 4.\n");
+		self.sides = sides;
+	}
 	return self;
 }
 
