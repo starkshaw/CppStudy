@@ -19,8 +19,8 @@
 }
 
 - (void) printVehicles {
-	for(int i = 0; i < [self.vehicles count]; i++) {
-		[self.vehicles[i] printDetail];
+	for(Vehicle* i in self.vehicles) {
+		[i printDetail];
 	}
 }
 
