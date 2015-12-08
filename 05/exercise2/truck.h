@@ -10,7 +10,7 @@ class Truck : public Vehicle {
 	public:
 	
 	Truck(int amountOfDoor, int amountOfCylinder, int transmissionType, std::string color, double fuelLevel, bool ifLoaded);
-	virtual void printDetail();
+	void printDetail();
 	
 	protected:
 	bool ifLoaded_;

@@ -10,7 +10,7 @@ class Taxi : public Vehicle {
 	public:
 	
 	Taxi(int amountOfDoor, int amountOfCylinder, int transmissionType, std::string color, double fuelLevel, bool presenceOfCustomer);
-	virtual void printDetail();
+	void printDetail();
 	
 	protected:
 	bool presenceOfCustomer_;

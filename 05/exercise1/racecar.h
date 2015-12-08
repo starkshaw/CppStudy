@@ -9,7 +9,7 @@ class Racecar : public Car {
 	
 	Racecar();
 	Racecar(std::string name, int maxSpeed, std::string color, int amountOfEngineValve, std::string sponsor, int amountOfGearbox, bool presenceOfParachute);
-	virtual void printDetail();
+	void printDetail();
 	~Racecar();
 	
 	protected:
