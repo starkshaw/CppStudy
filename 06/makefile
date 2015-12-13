@@ -1,13 +1,18 @@
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
-	CC = g++
+	CXX = g++
 endif
 ifeq ($(UNAME), Darwin)
-	CC = clang++
+	CXX = clang++
 endif
+
+.PHONY: clean
 
 all: driver
 
+clean:
+	rm driver
+
 driver: driver.cpp parkinglot.cpp taxi.cpp truck.cpp vehicle.cpp
-	$(CC) driver.cpp parkinglot.cpp taxi.cpp truck.cpp vehicle.cpp -o driver
+	$(CXX) driver.cpp parkinglot.cpp taxi.cpp truck.cpp vehicle.cpp -o driver

@@ -1,13 +1,18 @@
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
-        CC = g++
+        CXX = g++
 endif
 ifeq ($(UNAME), Darwin)
-        CC = clang++
+        CXX = clang++
 endif
+
+.PHONY: clean
 
 all: exercise3
 
+clean:
+	rm exercise3
+
 exercise3: exercise3.mm complex.mm
-	$(CC) -Wall -framework Foundation exercise3.mm complex.mm -o exercise3
+	$(CXX) -Wall -framework Foundation exercise3.mm complex.mm -o exercise3

@@ -1,19 +1,26 @@
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
-	CC = g++
+	CXX = g++
 endif
 ifeq ($(UNAME), Darwin)
-	CC = clang++
+	CXX = clang++
 endif
+
+.PHONY: clean
 
 all: exercise1 exercise2 exercise3
 
+clean:
+	rm exercise1
+	rm exercise2
+	rm exercise3
+
 exercise1: exercise1.cpp die.cpp
-	$(CC) exercise1.cpp die.cpp -o exercise1
+	$(CXX) exercise1.cpp die.cpp -o exercise1
 
 exercise2: exercise2.cpp complex.cpp
-	$(CC) exercise2.cpp complex.cpp -o exercise2
+	$(CXX) exercise2.cpp complex.cpp -o exercise2
 	
 exercise3: exercise3.cpp complex.cpp
-	$(CC) exercise3.cpp complex.cpp -o exercise3
+	$(CXX) exercise3.cpp complex.cpp -o exercise3

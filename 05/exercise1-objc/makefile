@@ -7,7 +7,12 @@ ifeq ($(UNAME), Darwin)
 	CC = clang
 endif
 
+.PHONY: clean
+
 all: driver
+
+clean:
+	rm driver
 
 driver: car.m driver.m racecar.m
 	$(CC) -Wall -framework Foundation car.m driver.m racecar.m -o driver
